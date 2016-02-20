@@ -1,0 +1,21 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class camera : MonoBehaviour {
+	Vector3 Saveposition;
+	public GameObject graphics;
+	// Use this for initialization
+	void Start () {
+		Saveposition = transform.position;
+	}
+
+	float a = 0.0f;
+	// Update is called once per frame
+	void Update () {
+		transform.position = new Vector3(transform.position.x+Mathf.Sin (Time.frameCount * 0.1f), Saveposition.y, transform.position.z+Saveposition.z);
+//		a += 0.05f;
+//		this.transform.position = new Vector3(a, Saveposition.y, Saveposition.z);
+
+		Debug.Log (this.transform.position);
+	}
+}
